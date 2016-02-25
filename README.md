@@ -1,14 +1,14 @@
 Copyright 2014 - The CyanogenMod Project
 ===================================
 
-Device configuration for Samsung Galaxy V SM-G313HZ (vivalto3gvn)
+Device configuration for build TWRP for Samsung Galaxy V SM-G313HZ (vivalto3gvn)
 
                        instruction how to build
 
 I think you already set up build enviroment so I will skip this.
 First go to your working dir/build/tools/device and open in gedit makerecoveries.sh
 Find line 
-        make -j16 recoveryzip
+        make -j4 recoveryzip
 and replace it with
         make recoveryzip
 beacause it wont eat your RAM and build will be faster
@@ -35,26 +35,13 @@ and run command:
         md5sum -t recovery.tar >> recovery.tar
         mv recovery.tar recovery.tar.md5
         
-An now you got recovery.tar.md5 ready to be flashed usin ODIN selected as PDA file
+And now you got recovery.tar.md5 ready to be flashed usin ODIN selected as PDA file
 
 And for build rom, run this command in terminal from your working dir 
 
         . build/envsetup.sh && brunch vivalto3gvn
 
 Good luck and Happy building. (^_^)/
-
-
-
-To apply patches 
-for example:  audio.patch
- got to frameworks/av  copy the patch in that directory and open 
-terminal and run command 
-where 1st command is to apply patch and 
-the 2nd for to revert the patches which applied earlier
-
-                      patch -p1 < audio.patch
-                      patch -R -p1 <audio.patch  
-
 
 Additional patches to be used for EGL is here 
 1.  EGL_NEEDS_FNW -> https://github.com/PAC-man/android_frameworks_native/commit/0c81fda74f6e7f9dc5f48bd00e4dbeaef12fdbc2

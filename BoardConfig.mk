@@ -40,32 +40,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-# RIL
-BOARD_RIL_CLASS := ../../../device/samsung/vivalto3gvn/ril
-
-# Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/vivalto3gvn/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/vivalto3gvn/bluetooth/libbt_vndcfg.txt
-#USE_BLUETOOTH_BCM4343 := true
-
-# Wifi
-BOARD_WLAN_DEVICE := bcmdhd
-BOARD_WLAN_DEVICE_REV := bcm4343
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/dhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA := "/system/etc/wifi/bcmdhd_sta.bin"
-WIFI_DRIVER_FW_PATH_AP := "/system/etc/wifi/bcmdhd_apsta.bin"
-WIFI_DRIVER_NVRAM_PATH_PARAM := "/sys/module/dhd/parameters/nvram_path"
-WIFI_DRIVER_NVRAM_PATH := "/system/etc/wifi/nvram_net.txt"
-WIFI_BAND := 802_11_ABG
-BOARD_HAVE_SAMSUNG_WIFI := true
-
 # Hardware rendering
 BOARD_EGL_CFG := device/samsung/vivalto3gvn/configs/egl.cfg
 USE_OPENGL_RENDERER := true
@@ -85,8 +59,6 @@ COMMON_GLOBAL_CFLAGS += -DSCX15_HWC
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
-# Audio
-#BOARD_USES_TINYALSA_AUDIO := true
 
 # Board specific features
 #BOARD_USE_VETH := true
@@ -94,20 +66,6 @@ TARGET_SCREEN_WIDTH := 480
 #BOARD_SAMSUNG_RIL := true
 COMMON_GLOBAL_CFLAGS += -DSPRD_HARDWARE
 
-# healthd
-BOARD_HAL_STATIC_LIBRARIES := libhealthd-vivalto3gvn.scx15
-
-# Camera
-CAMERA_SUPPORT_SIZE := 3M
-#android zsl capture
-TARGET_BOARD_CAMERA_ANDROID_ZSL_MODE := false
-#back camera rotation capture
-TARGET_BOARD_BACK_CAMERA_ROTATION := false
-#front camera rotation capture
-TARGET_BOARD_FRONT_CAMERA_ROTATION := false
-#rotation capture
-TARGET_BOARD_CAMERA_ROTATION_CAPTURE := false
-TARGET_BOARD_CAMERA_HAL_VERSION := HAL1.0
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
@@ -115,9 +73,6 @@ BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_CONFIG := cyanogen_vivalto3gvn_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/vivalto3gvn
-
-# Init
-TARGET_NR_SVC_SUPP_GIDS := 48
 
 # Recovery
 BOARD_HAS_NO_REAL_SDCARD := true
@@ -144,9 +99,6 @@ BOARD_SEPOLICY_UNION :=	\
 	untrusted_app.te \
 	vold.te	\
 	zygote.te
-
-# Enable dex-preoptimization to speed up the first boot sequence
-WITH_DEXPREOPT := true
 
 # CMHW
 BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/vivalto3gvn/cmhw/

@@ -20,6 +20,4 @@
 
 for i in eng user userdebug; do
 add_lunch_combo cm_vivalto3gvn-${i};
-add_lunch_combo aicp_vivalto3gvn-${i};
-add_lunch_combo carbon_vivalto3gvn-${i};
 done

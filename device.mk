@@ -23,10 +23,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 800
-TARGET_SCREEN_WIDTH := 480
-
 # languages
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.locale.language=en \
@@ -59,12 +55,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.locationfeatures=1 \
 	ro.com.google.networklocation=1
-
-# Dalvik heap config
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-
-# we have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \

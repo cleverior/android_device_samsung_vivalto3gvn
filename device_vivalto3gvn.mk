@@ -31,62 +31,18 @@ PRODUCT_PACKAGES += \
 	fibmap.f2fs \
 	mkfs.f2fs
 
-# Bluetooth config
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
-	$(LOCAL_PATH)/configs/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-	libbluetooth_jni
-
 # HWC
 PRODUCT_PACKAGES += \
 	libion \
 	iontest
 
-# Lights
-PRODUCT_PACKAGES += \
-	lights.scx15
-
-# Device-specific packages
-PRODUCT_PACKAGES += \
-	Torch \
-	SamsungServiceMode
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-	bluetooth.default \
-	audio.a2dp.default
-
-# Audio
-PRODUCT_PACKAGES += \
-	audio.r_submix.default \
-	audio.usb.default \
-	libaudio-resampler
-
-# Wifi
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-	$(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-	$(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
-
 # General config
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/permissions/platform.xml:system/etc/permissions/platform.xml \
 	$(LOCAL_PATH)/permissions/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-	$(LOCAL_PATH)/permissions/android.hardware.camera.flash.xml:system/etc/permissions/android.hardware.camera.flash.xml \
-	frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-	frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-	frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-	frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
 	frameworks/native/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml \
-	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
 # Other
 PRODUCT_PACKAGES += \
